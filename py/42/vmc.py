@@ -58,7 +58,7 @@ while True:
     print("2. Добавить продукт")
     print("0. Выход")
 
-    choice = input("Выберите пункт: ")
+    choice = input("Выберите пункт: \n")
 
     if choice == '1':
         view.display_products(model.products)
@@ -68,7 +68,7 @@ while True:
         try:
             price = float(price_input)
             controller.add(name, price)
-            print("✅ Продукт добавлен!")
+            print("add product")
         except ValueError:
             print("error type must be int ")
     elif choice == '0':
