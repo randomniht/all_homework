@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/main_index.css">
+</head>
+<body>
+<h1>Country</h1>
+
+{% for all in country %}
+<h1 class="jst-text"> {{all.name}} - <a class="countries_id" href="/country/{{all.id - 1}}"> {{all.id}}</a> </h1>
+
+{% endfor %}
+<h1>Test</h1>
+
+{% for all in country %}
+<a class="jst-text" href="/country/{{loop.index0}}"> {{all.name}}</a>
+
+{% endfor %}
+
+<a href='/' class="button">back</a>
+
+</body>
+</html>

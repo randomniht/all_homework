@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/main_index.css">
+</head>
+<body>
+<a href='/about' class="button">About</a>
+
+<a href="/country" class="button">Country</a>
+
+
+
+<h2> buy </h2>
+{% for prod in buy %}
+<p>{{prod}}</p>
+{% endfor %}
+
+
+{% for todo in data %}
+<p> {{todo.name}} - {{todo.status}} </p>
+{% endfor %}
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Castle_in_Dubno_Ukraine.jpg/500px-Castle_in_Dubno_Ukraine.jpg">
+
+
+</body>
+</html>
