@@ -6,16 +6,16 @@
     <link rel="stylesheet" href="../static/css/main_index.css">
 </head>
 <body>
-<h1>Country</h1>
+<h1>Products</h1>
 
-{% for all in country %}
-<h1 class="jst-text"> {{all.name}} - <a class="countries_id" href="/country/{{all.id - 1}}"> {{all.id}}</a> </h1>
+{% for all in todo %}
+<h1 class="jst-text"> {{all.name}} - <a class="countries_id" href="/prod/{{all.id - 1}}"> {{all.id}}</a> </h1>
 
 {% endfor %}
-<h1>Test</h1>
+<h1>Test_prod</h1>
 
-{% for all in country %}
-<a class="jst-text" href="/country/{{loop.index0}}"> {{all.name}}</a>
+{% for all in todo %}
+<a class="jst-text" href="/prod/{{loop.index0}}"> {{all.name}}</a>
 
 {% endfor %}
 

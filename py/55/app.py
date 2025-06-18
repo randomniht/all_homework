@@ -5,8 +5,10 @@ app = Flask(__name__)
 buy = ['cheese','watermelon','cherry']
 
 todo = [
-    {'id': 1,'name':'Погулять','status':'не сделано'},
-    {'id': 2,'name': 'Поспать', 'status': 'сделано'}
+    {'id': 1,'name':'Apple','status':'100'},
+    {'id': 2,'name': 'Watermelon', 'status': '64'},
+    {'id': 3, 'name': 'Cheese', 'status': '100'},
+
 ]
 
 country = [
@@ -28,12 +30,12 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/country')
+@app.route('/prod')
 def country_pages():
-    return render_template('country.html', country=todo)
+    return render_template('country.html', todo=todo)
 
 
-@app.route('/country/<int:country_index>')
+@app.route('/prod/<int:country_index>')
 def single_country_pages(country_index):
     single_contry = todo[country_index]
     return render_template('contry_detail.html', single_contry = single_contry)
