@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<b>Hello world!</b>
+<a href="/about">О нас </a>
+<a href="/countries">Столицы стран </a>
+<h2>Список дел</h2>
+{% for todo in data %}
+<p>{{ todo.name }} -- {{ todo.status }}  </p>
+{% endfor %}
+
+<a href="/countries">
+    <img src="https://cdn.tripster.ru/thumbs2/4bdc50b6-82c2-11ee-aeeb-bacb0497e01f.1220x600.jpeg" width="200">
+</a>
+</body>
+</html>
