@@ -1,5 +1,5 @@
-from django.shortcuts import redirect
-from flask import Flask, render_template_string, render_template, redirect
+
+from flask import Flask, render_template_string, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -39,7 +39,7 @@ def country_pages():
 @app.route('/prod/<int:country_index>')
 def single_country_pages(country_index):
     for item in todo:
-        if item['id'] == country_index + 1:
+        if item['id'] == country_index:
             return render_template('contry_detail.html', single_contry=item)
 
 @app.route('/prod/<int:country_index>/del')
@@ -51,4 +51,16 @@ def single_country_del(country_index):
     return redirect('/')
 
 
-app.run(debug=True, port=5009)
+@app.route('/countries/new', methods=['POST'])
+def countries_add():
+    todo_usr = {
+        'id':int(request.form['id']),
+
+        'name': request.form['name'],
+
+        'status': request.form['status']
+    }
+    todo.append(todo_usr)
+    return redirect('/prod')
+
+app.run(debug=True, port=5000)
